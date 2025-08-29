@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "E155 Blog",
+    "section": "",
+    "text": "first post\n\n\nWelcome to my E155 Portfolio here I will post my work for E155\n\n\n\n\n\nAug 28, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Leilani’s E155 Portfolio",
+    "section": "",
+    "text": "Leilani Elkaslasy is a Senior Engineering Major at Harvey Mudd college focusing on Digital and Analog Electrical Engineering. She is currently diving into the mystical realm of microprocessors through a series of FPGA projects. Follow along as she experiences the magical wonder!\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "resources/resources1.html",
+    "href": "resources/resources1.html",
+    "title": "resources",
+    "section": "",
+    "text": "Resources from Professor Brake’s Course Taught by Professor Spencer:\nhttps://hmc-e155.github.io"
+  },
+  {
+    "objectID": "posts/firstpost.html",
+    "href": "posts/firstpost.html",
+    "title": "first post",
+    "section": "",
+    "text": "I am really excited to learn more about microprocessors! I think especially building the FPGA then creating all the verilog and verifying it will bring a depth and confidence to my digital electronics knowledge that I haven’t reached before. I’m also hoping to improve my debugging skills as that has been a consisten bottleneck in my programming processes. My Goals are to develop an indepth understanding on the microproccessor and FPGA programming processes and to improve my efficiency at these skills. I also hope to make friends along the way! Long hours in the basement has a way of bringing people together :3"
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "E155 Labs",
+    "section": "",
+    "text": "Lab 1\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nSep 4, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2\n\n\nMultiplexed 7-Segment Display\n\n\n\n\n\nSep 11, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3\n\n\nKeypad Scanner\n\n\n\n\n\nSep 18, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4\n\n\nDigital Audio\n\n\n\n\n\nSep 25, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5\n\n\nInterrupts\n\n\n\n\n\nOct 2, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 6\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nOct 9, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 7\n\n\nThe Advanced Encription Standard\n\n\n\n\n\nOct 16, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "E155 Resources",
+    "section": "",
+    "text": "resources\n\n\nhttps://hmc-e155.github.io\n\n\n\n\n\nAug 28, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\nNo matching items"
+  }
+]
