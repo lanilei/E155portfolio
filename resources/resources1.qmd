@@ -1,0 +1,13 @@
+---
+title: "resources"
+description: "https://hmc-e155.github.io"
+author: "Leilani Elkaslasy"
+date: "8/28/25"
+categories:
+  - reflection
+  - labreport
+draft: false
+---
+Resources from Professor Brake's Course Taught by Professor Spencer:
+
+https://hmc-e155.github.io

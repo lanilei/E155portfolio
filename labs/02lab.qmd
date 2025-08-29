@@ -1,0 +1,9 @@
+---
+title: "Lab 2"
+description: "Multiplexed 7-Segment Display"
+author: "Leilani Elkaslasy"
+date: "9/11/25"
+categories:
+ 
+draft: false
+---

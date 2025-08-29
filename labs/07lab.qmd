@@ -1,0 +1,9 @@
+---
+title: "Lab 7"
+description: " The Advanced Encription Standard "
+author: "Leilani Elkaslasy"
+date: "10/16/25"
+categories:
+ 
+draft: false
+---

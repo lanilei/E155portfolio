@@ -1,0 +1,9 @@
+---
+title: "Lab 4"
+description: "Digital Audio"
+author: "Leilani Elkaslasy"
+date: "9/25/25"
+categories:
+ 
+draft: false
+---

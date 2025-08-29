@@ -1,0 +1,7 @@
+---
+title: "Lab 1"
+description: "FPGA and MCU Setup and Testing"
+author: "Leilani Elkaslasy"
+date: "9/4/25"
+draft: false
+---

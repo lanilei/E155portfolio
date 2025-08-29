@@ -1,0 +1,23 @@
+---
+title: "Leilani's E155 Portfolio"
+about:
+    template: jolla
+    image: images/2198.jpg
+    links: 
+        - icon: linkedin
+          text: LinkedIn
+          href: https://www.linkedin.com/in/leilani-elkaslasy-7863a3330/
+        - icon: github 
+          text: Github
+          href: https://github.com/lanilei
+
+---
+
+
+Leilani Elkaslasy is a Senior Engineering Major at Harvey Mudd college focusing on Digital and Analog Electrical Engineering. She is currently diving into the mystical realm of microprocessors through a series of FPGA projects. Follow along as she experiences the magical wonder! 
+
+
+
+
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

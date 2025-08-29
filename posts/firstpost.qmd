@@ -1,0 +1,11 @@
+---
+title: "first post"
+description: "Welcome to my E155 Portfolio here I will post my work for E155"
+author: "Leilani Elkaslasy"
+date: "8/28/25"
+categories:
+  - reflection
+  - labreport
+draft: false
+---
+I am really excited to learn more about microprocessors! I think especially building the FPGA then creating all the verilog and verifying it will bring a depth and confidence to my digital electronics knowledge that I haven't reached before. I'm also hoping to improve my debugging skills as that has been a consisten bottleneck in my programming processes. My Goals are to develop an indepth understanding on the microproccessor and FPGA programming processes and to improve my efficiency at these skills. I also hope to make friends along the way! Long hours in the basement has a way of bringing people together :3

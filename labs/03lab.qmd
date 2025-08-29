@@ -1,0 +1,9 @@
+---
+title: "Lab 3"
+description: "Keypad Scanner"
+author: "Leilani Elkaslasy"
+date: "9/18/25"
+categories:
+ 
+draft: false
+---
