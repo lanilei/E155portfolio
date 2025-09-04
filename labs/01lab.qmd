@@ -5,3 +5,27 @@ author: "Leilani Elkaslasy"
 date: "9/4/25"
 draft: false
 ---
+For Lab 1 I met all specifications and functions. 
+
+
+## Introduction 
+This week a iCE40 UP5K FPGA development board was assembled to house a UPduino v3.1 MCU. The board’s functionality was verified by programming a seven segment display to represent all digits of hex based on 4 switches on the dev board represented by inputs s[3:0]. In order to further test the functionality three LEDs on the dev board were programmed- 2 to turn on based on inputs s[3:0] and 1 to oscillate at 2.4 Hz. Both the seven segment display and all 3 leds worked as expected, both in sim and in situ, confirming the FPGA dev board's functionality. This process took a total of 30 hours. 
+
+## Design  and Testing Methodology 
+
+## Technial Documentation
+![](lab1images/blockdiagramlab1.jpeg)
+<https://github.com/lanilei/E155labs/tree/main/lab1>
+
+## Calculations 
+![](lab1images/ResistorCalclab1.jpeg)
+
+## Results and Discussion 
+## Testing
+![](lab1images/toptestbench.png)
+![](lab1images/ledstestbench.png)
+![](lab1images/sevensegtestbench.png)
+
+## Conclusion 
+
+## AI Results Summary 
