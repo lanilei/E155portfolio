@@ -4,7 +4,6 @@ web/.quarto/
 web/_site/
 .quarto
 _site
-docs
 
 /.quarto/
 **/*.quarto_ipynb
