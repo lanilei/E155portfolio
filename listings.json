@@ -1,0 +1,26 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/firstpost.html"
+    ]
+  },
+  {
+    "listing": "/labs.html",
+    "items": [
+      "/labs/01lab.html",
+      "/labs/02lab.html",
+      "/labs/03lab.html",
+      "/labs/04lab.html",
+      "/labs/05lab.html",
+      "/labs/06lab.html",
+      "/labs/07lab.html"
+    ]
+  },
+  {
+    "listing": "/resources.html",
+    "items": [
+      "/resources/resources1.html"
+    ]
+  }
+]
