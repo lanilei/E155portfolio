@@ -21,6 +21,69 @@
     "text": "Resources from Professor Brake’s Course Taught by Professor Spencer:\nhttps://hmc-e155.github.io"
   },
   {
+    "objectID": "labs/01lab.html",
+    "href": "labs/01lab.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "This week a iCE40 UP5K FPGA development board was assembled to house a UPduino v3.1 MCU. The board’s functionality was verified by programming a seven segment display to represent all digits of hex based on 4 switches on the dev board represented by inputs s[3:0]. In order to further test the functionality three LEDs on the dev board were programmed- 2 to turn on based on inputs s[3:0] and 1 to oscillate at 2.4 Hz. Both the seven segment display and all 3 leds worked as expected, both in sim and in situ, confirming the FPGA dev board’s functionality. This process took a total of 30 hours."
+  },
+  {
+    "objectID": "labs/01lab.html#introduction",
+    "href": "labs/01lab.html#introduction",
+    "title": "Lab 1",
+    "section": "",
+    "text": "This week a iCE40 UP5K FPGA development board was assembled to house a UPduino v3.1 MCU. The board’s functionality was verified by programming a seven segment display to represent all digits of hex based on 4 switches on the dev board represented by inputs s[3:0]. In order to further test the functionality three LEDs on the dev board were programmed- 2 to turn on based on inputs s[3:0] and 1 to oscillate at 2.4 Hz. Both the seven segment display and all 3 leds worked as expected, both in sim and in situ, confirming the FPGA dev board’s functionality. This process took a total of 30 hours."
+  },
+  {
+    "objectID": "labs/01lab.html#design-and-testing-methodology",
+    "href": "labs/01lab.html#design-and-testing-methodology",
+    "title": "Lab 1",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology"
+  },
+  {
+    "objectID": "labs/01lab.html#technial-documentation",
+    "href": "labs/01lab.html#technial-documentation",
+    "title": "Lab 1",
+    "section": "Technial Documentation",
+    "text": "Technial Documentation\nGithub repository containing all code used for this lab: https://github.com/lanilei/E155labs/tree/main/lab1\n\nBlock Diagram\n In order to approach solving this problem, each function was seperated into its own module. The LEDs were combined to be driven by LED.SV and the Seven segment display was controlled using combinational logic in its own module. These two modules were tied together using a top module that called upon them both."
+  },
+  {
+    "objectID": "labs/01lab.html#calculations",
+    "href": "labs/01lab.html#calculations",
+    "title": "Lab 1",
+    "section": "Calculations",
+    "text": "Calculations\n\n\n\nFigure 3. Calculations for Resistor Value\n\n\n\nSchematic\nUsing the resistor value confirmed by the above calculations I created a circuit on a breadboard in accordance with the following schematic:\n\n\n\nFigure 2a. Circuit Schematic of the FPGA and 7 segment Display\n\n\n\n\n\nFigure 2b. Schematic of the seven segment display birdseye view"
+  },
+  {
+    "objectID": "labs/01lab.html#results-and-discussion",
+    "href": "labs/01lab.html#results-and-discussion",
+    "title": "Lab 1",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nBoth the simulated and physical circuit were tested extensively confirming all desired functionality. The seven segment display showed all possible digits of hex in accordance with the input switches s[3:0]. LED 2 Oscillated at 2.4 Hz. LED 1 turned on when S[2] & S[1] outputed high. LED 0 turened on when S[1] XOR S[0] outputed high."
+  },
+  {
+    "objectID": "labs/01lab.html#testing",
+    "href": "labs/01lab.html#testing",
+    "title": "Lab 1",
+    "section": "Testing",
+    "text": "Testing\n\nTestbenches\nThe system verilog modules were tested individually using a simulated testbench. All Modules were confirmed to work as expected.\n\n\n\nFigure 4. Testbench waveforms for Top Module test bench\n\n\n\n\n\nFigure 5. Testbench wave forms for LED test bench\n\n\n\n\n\nFigure 6. Testbench wave forms for the seven segment display test bench\n\n\n\n\nPhysical Circuit testing\nThe FPGA Dev Board and bread board circuit were all tested extensively in the lab by ensuring the input switches, LEDs, and seven segment display worked as expected."
+  },
+  {
+    "objectID": "labs/01lab.html#conclusion",
+    "href": "labs/01lab.html#conclusion",
+    "title": "Lab 1",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis was an engaging and educational lab 30 hour lab. Through assembly, programming, and debugging a seven segment display was fully realized along with some additional LEDs."
+  },
+  {
+    "objectID": "labs/01lab.html#ai-results-summary",
+    "href": "labs/01lab.html#ai-results-summary",
+    "title": "Lab 1",
+    "section": "AI Results Summary",
+    "text": "AI Results Summary\n The AI generated system verilog was interesting. I would not have thought to use local param integer command for the counter. The most useful part of the experience of prompting AI was the immediate generation of a full module. However, it did not include enough detail for me to understand the details of its implementation.\n\n\n\nFigure 9. Error message from synthesis attempt in lattice\n\n\nThe AI seemed to call upon a module that didn’t exist as it did not define SB_HFOSC as a module. This type of hallucination is why it can be more difficult to program with AI than without it.\n\n\n\nFigure 10. How AI suggested i resolved the error message\n\n\nNone of the suggested resolutions included establishing SB_HFOSC as a module. It instead put out a bunch of solutions that seemed to overcomplicate things.\nA better use of AI would be to have it explain error messages and help with recalling forgotten syntax. It is better to do the programming oneself.\nThank you for reading my write up! Stay tuned for another exciting lab drop next week!!!"
+  },
+  {
     "objectID": "posts/firstpost.html",
     "href": "posts/firstpost.html",
     "title": "first post",
@@ -40,82 +103,5 @@
     "title": "E155 Resources",
     "section": "",
     "text": "resources\n\n\nhttps://hmc-e155.github.io\n\n\n\n\n\nAug 28, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "labs/01lab.html",
-    "href": "labs/01lab.html",
-    "title": "Lab 1",
-    "section": "",
-    "text": "This week a iCE40 UP5K FPGA development board was assembled to house a UPduino v3.1 MCU. The board’s functionality was verified by programming a seven segment display to represent all digits of hex based on 4 switches on the dev board represented by inputs s[3:0]. In order to further test the functionality three LEDs on the dev board were programmed- 2 to turn on based on inputs s[3:0] and 1 to oscillate at 2.4 Hz. Both the seven segment display and all 3 leds worked as expected, both in sim and in situ, confirming the FPGA dev board’s functionality. This process took a total of 30 hours."
-  },
-  {
-    "objectID": "labs/01lab.html#introduction",
-    "href": "labs/01lab.html#introduction",
-    "title": "Lab 1",
-    "section": "",
-    "text": "This week a iCE40 UP5K FPGA development board was assembled to house a UPduino v3.1 MCU. The board’s functionality was verified by programming a seven segment display to represent all digits of hex based on 4 switches on the dev board represented by inputs s[3:0]. In order to further test the functionality three LEDs on the dev board were programmed- 2 to turn on based on inputs s[3:0] and 1 to oscillate at 2.4 Hz. Both the seven segment display and all 3 leds worked as expected, both in sim and in situ, confirming the FPGA dev board’s functionality. This process took a total of 30 hours."
-  },
-  {
-    "objectID": "labs/01lab.html#design",
-    "href": "labs/01lab.html#design",
-    "title": "Lab 1",
-    "section": "Design",
-    "text": "Design\n https://github.com/lanilei/E155labs/tree/main/lab1"
-  },
-  {
-    "objectID": "labs/01lab.html#calculations",
-    "href": "labs/01lab.html#calculations",
-    "title": "Lab 1",
-    "section": "Calculations",
-    "text": "Calculations\n\n\n\nFigure 3. Calculations for Resistor Value\n\n\n\nSchematic\nUsing the resistor value confirmed by the above calculations I created a circuit on a breadboard in accordance with the following schematic:\n\n\n\nFigure 2a. Circuit Schematic of the FPGA and 7 segment Display\n\n\n\n\n\nFigure 2b. Schematic of the seven segment display birdseye view"
-  },
-  {
-    "objectID": "labs/01lab.html#testing",
-    "href": "labs/01lab.html#testing",
-    "title": "Lab 1",
-    "section": "Testing",
-    "text": "Testing\n\nTestbenches\nThe system verilog modules were tested individually using a simulated testbench. All Modules were confirmed to work as expected.\n\n\n\nFigure 4. Testbench waveforms for Top Module test bench\n\n\n\n\n\nFigure 5. Testbench wave forms for LED test bench\n\n\n\n\n\nFigure 6. Testbench wave forms for the seven segment display test bench\n\n\n\n\nPhysical Circuit testing\nThe FPGA Dev Board and bread board circuit were all tested extensively in the lab by ensuring the input switches, LEDs, and seven segment display worked as expected."
-  },
-  {
-    "objectID": "labs/01lab.html#design-and-testing-methodology",
-    "href": "labs/01lab.html#design-and-testing-methodology",
-    "title": "Lab 1",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology"
-  },
-  {
-    "objectID": "labs/01lab.html#technial-documentation",
-    "href": "labs/01lab.html#technial-documentation",
-    "title": "Lab 1",
-    "section": "Technial Documentation",
-    "text": "Technial Documentation\nGithub repository containing all code used for this lab: https://github.com/lanilei/E155labs/tree/main/lab1\n\nBlock Diagram\n In order to approach solving this problem, each function was seperated into its own module. The LEDs were combined to be driven by LED.SV and the Seven segment display was controlled using combinational logic in its own module. These two modules were tied together using a top module that called upon them both."
-  },
-  {
-    "objectID": "labs/01lab.html#results-and-discussion",
-    "href": "labs/01lab.html#results-and-discussion",
-    "title": "Lab 1",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\nBoth the simulated and physical circuit were tested extensively confirming all desired functionality. The seven segment display showed all possible digits of hex in accordance with the input switches s[3:0]. LED 2 Oscillated at 2.4 Hz. LED 1 turned on when S[2] & S[1] outputed high. LED 0 turened on when S[1] XOR S[0] outputed high."
-  },
-  {
-    "objectID": "labs/01lab.html#conclusion",
-    "href": "labs/01lab.html#conclusion",
-    "title": "Lab 1",
-    "section": "Conclusion",
-    "text": "Conclusion\nThis was an engaging and educational lab 30 hour lab. Through assembly, programming, and debugging a seven segment display was fully realized along with some additional LEDs."
-  },
-  {
-    "objectID": "labs/01lab.html#ai-results-summary",
-    "href": "labs/01lab.html#ai-results-summary",
-    "title": "Lab 1",
-    "section": "AI Results Summary",
-    "text": "AI Results Summary\n The AI generated system verilog was interesting. I would not have thought to use local param integer command for the counter. The most useful part of the experience of prompting AI was the immediate generation of a full module. However, it did not include enough detail for me to understand the details of its implementation.\n\n\n\nFigure 9. Error message from synthesis attempt in lattice\n\n\nThe AI seemed to call upon a module that didn’t exist as it did not define SB_HFOSC as a module. This type of hallucination is why it can be more difficult to program with AI than without it.\n\n\n\nFigure 10. How AI suggested i resolved the error message\n\n\nNone of the suggested resolutions included establishing SB_HFOSC as a module. It instead put out a bunch of solutions that seemed to overcomplicate things.\nA better use of AI would be to have it explain error messages and help with recalling forgotten syntax. It is better to do the programming oneself.\nThank you for reading my write up! Stay tuned for another exciting lab drop next week!!!"
-  },
-  {
-    "objectID": "labs/01lab.html#section",
-    "href": "labs/01lab.html#section",
-    "title": "Lab 1",
-    "section": "",
-    "text": "Testbenches"
   }
 ]
