@@ -250,6 +250,12 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Figure 6. Testbench wave forms for Switch module test bench</figcaption>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab1images/sevensegtestbench.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 6a. Testbench wave forms for Sevenseg module test bench</figcaption>
+</figure>
+</div>
 </section>
 <section id="physical-circuit-testing" class="level3">
 <h3 class="anchored" data-anchor-id="physical-circuit-testing">Physical Circuit testing</h3>
@@ -351,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/lanilei\.github\.io\/E155portfolio\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

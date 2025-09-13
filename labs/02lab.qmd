@@ -47,7 +47,7 @@ The system verilog modules were tested individually using a simulated testbench.
 
 ![Figure 6. Testbench wave forms for Switch module test bench ](lab2images/switchtestbench.png)
 
-![Figure 6a. Testbench wave forms for Switch module test bench ](lab1images/sevensegtestbench.png)
+![Figure 6a. Testbench wave forms for Sevenseg module test bench ](lab1images/sevensegtestbench.png)
 
 ### Physical Circuit testing
 The FPGA Dev Board and bread board circuit were all tested extensively in the lab by ensuring the input switches, LEDs, and seven segment display worked as expected. 
