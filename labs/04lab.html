@@ -122,8 +122,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technial-documentation" id="toc-technial-documentation" class="nav-link" data-scroll-target="#technial-documentation">Technial Documentation</a></li>
+  <li><a href="#calculations" id="toc-calculations" class="nav-link" data-scroll-target="#calculations">Calculations</a>
+  <ul class="collapse">
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
+  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-results-summary" id="toc-ai-results-summary" class="nav-link" data-scroll-target="#ai-results-summary">AI Results Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -164,8 +180,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this lab an STMLK324KC microcontroller was programmed to interface with a speaker and play two songs: Fur Elise and Jingle Bells. For this lab the MCU’s memory map and timing peripherals had to be leveraged facilitating familiarity with the STMLK32KC data sheet navigation.</p>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>This labs design was encoded in C with libraries from the E 155 course as a jumping off point. Primarily the GPIO and RCC libraries were used. However the PWM and timer peripheral files had to be implemented. In order to do so a close reading of the reference manual and data sheet was neccescary to understand these functions and how to implement them. The timers selected for this lab were TIM15 and TIM16. TIM15 as a standard counter and TIM16 as the PWM. For the PWM the duty cycle was fixed to a value of 50% in order to ensure that the sound outputs would not be distorted. The timer and PWM were routed to the speaker through the LMA386 audio amplifier chip and a potnetiometer for volume control.</p>
+</section>
+<section id="technial-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technial-documentation">Technial Documentation</h2>
+<p>Github repository containing all code used for this lab: <a href="https://github.com/lanilei/E155labs/tree/main/lab4" class="uri">https://github.com/lanilei/E155labs/tree/main/lab4</a></p>
+</section>
+<section id="calculations" class="level2">
+<h2 class="anchored" data-anchor-id="calculations">Calculations</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab4images/CalculationsLab4.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure 1. Calculations for Max/Min duration, Max/ Min frequency and correct duration and pitch</figcaption>
+</figure>
+</div>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<p>Following the LMA386 data sheet the following circuit was implemented</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab4images/schematiclab4.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure 2. Circuit Schematic of Digital Audio system and MCU</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<p>The speaker played fur elise and jingle bells when the code was uploaded onto the MCU. The volume was easily controlled using the potentiometer.</p>
+</section>
+<section id="testing" class="level2">
+<h2 class="anchored" data-anchor-id="testing">Testing</h2>
+<p>The circuit was tested using an oscilliscope to ensure poper signals were being output. All C files compiled without flagging any bugs.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This lab took 20 hours. Through breadboarding, programming, and debugging a digital audio system was fully realized.</p>
+</section>
+<section id="ai-results-summary" class="level2">
+<h2 class="anchored" data-anchor-id="ai-results-summary">AI Results Summary</h2>
+<p>AI was asked “What timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz? What’s the best choice of timer if I want to easily connect it to a GPIO pin? What formulae are relevant, and what registers need to be set to configure them properly?””</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab4images/airecsnomanual.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3. AI Without Reference Manual</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab4images/airecsmanual.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 4. AI With Reference Manual</figcaption>
+</figure>
+</div>
+<p>As per usual Chat GPT was able to come up with an anser in a matter of seconds for what took me manually about an hour to figure out. It seems to be that it went with the first possible answer choosing TIM2 in both the cases where it was asked to browse the reference manual and the case where it was asked to answer without attatching the reference manual. Although it went with the first option that worked credit is due for skipping over TIM1. TIM2 is PWM capable and therefore not a bad choice. However I found that TIM 15/16 were better suited to my needs for this lab when repeating this process manually. I think it did point me in a write direction and was better and more efficient than “Ctrl F” in the refererence manual. That said,I’d like to further explore uploading the manual and asking it questions about the manual.</p>
+<p><img src="lab4images/Screen Shot 2025-10-08 at 10.28.22 AM.png" class="img-fluid" alt="Figure 5. Summary of Timers"> When I asked to summarise all my timer options it returned thsi summary table. I like the idea that I can then choose for myself what best fits my project but also that I can obtain targetted information.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
