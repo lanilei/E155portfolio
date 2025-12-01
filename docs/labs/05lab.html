@@ -122,8 +122,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technial-documentation" id="toc-technial-documentation" class="nav-link" data-scroll-target="#technial-documentation">Technial Documentation</a>
+  <ul class="collapse">
+  <li><a href="#system-flow-chart" id="toc-system-flow-chart" class="nav-link" data-scroll-target="#system-flow-chart">System Flow Chart</a></li>
+  </ul></li>
+  <li><a href="#calculations" id="toc-calculations" class="nav-link" data-scroll-target="#calculations">Calculations</a>
+  <ul class="collapse">
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
+  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ai-prototype-summary" id="toc-ai-prototype-summary" class="nav-link" data-scroll-target="#ai-prototype-summary">AI Prototype Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -164,8 +183,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this lab an STMLK324KC microcontroller was programmed to interface with a motor to measure the rotational speed an direction of its spin through a quadrature encoder. The moter output two square waves that were 90 degrees out of phase and interrupts were used to extract the rotations per second and the direction of rotation with both accuracy and preciscion.</p>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>The system was esigned to interpret two optical quarature sensors that produced square wave sthat were out of phase by 90 degrees. All edges of the signals generate an interrupt. This labs design was encoded in C with libraries from the E 155 course as a jumping off point.</p>
+</section>
+<section id="technial-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technial-documentation">Technial Documentation</h2>
+<p>Github repository containing all code used for this lab: <a href="https://github.com/lanilei/E155labs/tree/main/lab5" class="uri">https://github.com/lanilei/E155labs/tree/main/lab5</a></p>
+<section id="system-flow-chart" class="level3">
+<h3 class="anchored" data-anchor-id="system-flow-chart">System Flow Chart</h3>
+<p>This chart shows an overview of the interrupt and encoder interpratation system implemented. The sequence on the left shows the main loop wich interafaces with the interrupt handler on the right. <img src="lab5images/flowchartlab5.jpg" class="img-fluid" alt="Figure 1. System flow chart"></p>
+</section>
+</section>
+<section id="calculations" class="level2">
+<h2 class="anchored" data-anchor-id="calculations">Calculations</h2>
+<p>The interrupt works by incrementing the conter at each rising and falling edge for both uadrature signals. The count over the course of a second is converted to angular velocity as revolutions per second. The interrupt increments by four for each measured pulse which is why we apply the correction factors. The datasheet for the motor state sthat there are 408 pulses per revolution which we can extrapolate to find the target velocity. BY confirming the results with the datasheet, the system is deemd to operate accuratley. <img src="lab5images/Calculationslab5.jpeg" class="img-fluid" alt="Figure 2. Calculations for"></p>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<p>Following the LTS-25Ga370H-34 data sheet the following circuit was implememted to interface signal A and B with pins 6 and 8 on the MCU which are 5V tolerant. The power for the Quadrature and Gnd were provided by the MCU and the motor was powered by a power supply.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab5images/schematic lab5.jpg" class="img-fluid figure-img"></p>
+<figcaption>Figure 3. Circuit Schematic of Digital Audio system and MCU</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<p>The interrupt based encoder implemented in this lab provided accurate velocity measurements in rotations/s and dependable direction readings in clockwise denoted as CW and counter-clockwise denoted as CCW. The interrupts were cirical to this lab as they allowed the MCU to complete other tasks while aiting for an encoder signal, this improved system efficiency and responsiveness for high speed resolution. By incrementing the counter on both the positive and negative edges of encoder singals high speed was bolstered.</p>
+<p>Polling has many limitations that made interrupts an ideal choice for this lab. The primary limitation is the polling requries that the encoder flags are constantly monitered- this creates a high consuption of CPU resources- primarily time and power. Polling can also often be too slow which could incorrectly skew data. For the time sensitive control required by this lab- polling was unsuitable.</p>
+</section>
+<section id="testing" class="level2">
+<h2 class="anchored" data-anchor-id="testing">Testing</h2>
+<p>The circuit was tested using an oscilliscope to ensure poper signals were being output. All C files compiled without flagging any bugs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab5images/Scopelab5.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure 4. Scope Trace, yellow trace represents polling, blue trace represents interrupt trigger and purple represents the encoder</figcaption>
+</figure>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This lab met all required specs. Implementing this lab took 30 hours. Through breadboarding, programming, and debugging the motor with real time angular velocity and spin direction output was realized.</p>
+</section>
+<section id="ai-prototype-summary" class="level2">
+<h2 class="anchored" data-anchor-id="ai-prototype-summary">AI Prototype Summary</h2>
+<p>AI was prompted, “Write me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?” It was suprising that chat GPT suggested the use of Hardware Timer in Encoder mode first over the use of an interrupt as the prompt asked for a interrupt. When guided towards an interrupt. The Code generated when asked for an interrupt did not compile and erros were flagged on nearly every line of code. q</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -240,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/lanilei\.github\.io\/E155portfolio\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -140,6 +140,125 @@
     "text": "AI Results Summary\n The AI generated system verilog was interesting. I would not have thought to use local param integer command for the counter. The most useful part of the experience of prompting AI was the immediate generation of a full module. However, it did not include enough detail for me to understand the details of its implementation.\n\n\n\nFigure 9. Error message from synthesis attempt in lattice\n\n\nThe AI seemed to call upon a module that didn’t exist as it did not define SB_HFOSC as a module. This type of hallucination is why it can be more difficult to program with AI than without it.\n\n\n\nFigure 10. How AI suggested i resolved the error message\n\n\nNone of the suggested resolutions included establishing SB_HFOSC as a module. It instead put out a bunch of solutions that seemed to overcomplicate things.\nA better use of AI would be to have it explain error messages and help with recalling forgotten syntax. It is better to do the programming oneself.\nThank you for reading my write up! Stay tuned for another exciting lab drop next week!!!"
   },
   {
+    "objectID": "labs/03lab.html",
+    "href": "labs/03lab.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "This week the iCE40 UP5K FPGA was programmed to drive two seven segment desplays simultaneously using only one seven-segment decoder HDL Module which requried time-multiplexing. In order to do so the signals were oscillating at a fast enough speed that the viewere would not notice any flickering. The two displays were controlled using a DIP switch for each display one on the breadboard and on on the FPGA dev board. The sum of both hex inputs was then displayed in binary using 5 LEDs on the breadboard."
+  },
+  {
+    "objectID": "labs/03lab.html#introduction",
+    "href": "labs/03lab.html#introduction",
+    "title": "Lab 2",
+    "section": "",
+    "text": "This week the iCE40 UP5K FPGA was programmed to drive two seven segment desplays simultaneously using only one seven-segment decoder HDL Module which requried time-multiplexing. In order to do so the signals were oscillating at a fast enough speed that the viewere would not notice any flickering. The two displays were controlled using a DIP switch for each display one on the breadboard and on on the FPGA dev board. The sum of both hex inputs was then displayed in binary using 5 LEDs on the breadboard."
+  },
+  {
+    "objectID": "labs/03lab.html#design-and-testing-methodology",
+    "href": "labs/03lab.html#design-and-testing-methodology",
+    "title": "Lab 2",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThis labs design was encoded in HDL on Lattices using system verilog to accurately encode desired circuit behaviors and then uploaded to the FPGA. The verilog was verified using a testbench for each module that tested all possible inputs and proved that the desired outputs were obtained. The external 7-segment displays and 5 LEDS were then wired on a breadboard and tested to confirm compenents performed in the desired manner. ## Technial Documentation Github repository containing all code used for this lab: https://github.com/lanilei/E155labs/tree/main/lab2/FPGA\n\n\n\nTable 1: My Caption\n\n\n\n\n\nCol1\nCol2\nCol3\n\n\n\n\nA\nB\nC\n\n\nE\nF\nG\n\n\nA\nG\nG\n\n\n\n\n\n\nSee Table 1.\n\nBlock Diagram\n In order to approach solving this problem, each function was seperated into its own module. The LEDs were combined to be driven by LED.SV and the Seven segment display was controlled using combinational logic in its own module. These two modules were tied together using a top module that called upon them both.\n\n\n\nFigure 1b. Block Diagram of the System Verilog Design for the switch submodule"
+  },
+  {
+    "objectID": "labs/03lab.html#calculations",
+    "href": "labs/03lab.html#calculations",
+    "title": "Lab 2",
+    "section": "Calculations",
+    "text": "Calculations\n\n\n\nFigure 2. Calculations for Resistor Values for PNP Transistor circuit, Seven segment display circuit, and for the Red external LEDS\n\n\n\nSchematic\nUsing the resistor value confirmed by the above calculations a circuit was created on a breadboard in accordance with the following schematic:\n\n\n\nFigure 3. Circuit Schematic of the FPGA, dip switches dual 7 segment Display, summing LEDS"
+  },
+  {
+    "objectID": "labs/03lab.html#results-and-discussion",
+    "href": "labs/03lab.html#results-and-discussion",
+    "title": "Lab 2",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nBoth the simulated and physical circuit were tested extensively confirming all desired functionality. Both seven segment displays showed all possible digits of hex in accordance with the input switches s1[3:0] and s2[3:0]. 5 LEDs showed the sum of s1 and s2."
+  },
+  {
+    "objectID": "labs/03lab.html#testing",
+    "href": "labs/03lab.html#testing",
+    "title": "Lab 2",
+    "section": "Testing",
+    "text": "Testing\n\nTestbenches\nThe system verilog modules were tested individually using a simulated testbench. All Modules were confirmed to work as expected.\n\n\n\nFigure 4. Testbench waveforms for Top Module test bench\n\n\n\n\n\nFigure 5. Testbench wave forms for Top Module test bench zoomed in\n\n\n\n\n\nFigure 6. Testbench wave forms for Switch module test bench\n\n\n\n\n\nFigure 6a. Testbench wave forms for Sevenseg module test bench\n\n\n\n\nPhysical Circuit testing\nThe FPGA Dev Board and bread board circuit were all tested extensively in the lab by ensuring the input switches, LEDs, and seven segment display worked as expected."
+  },
+  {
+    "objectID": "labs/03lab.html#conclusion",
+    "href": "labs/03lab.html#conclusion",
+    "title": "Lab 2",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis lab took 36 hours. Through breadboarding, programming, and debugging a multiplexed dual seven segment display was fully realized along with a 5 LED array to display the sum of both dip swithc inputs."
+  },
+  {
+    "objectID": "labs/03lab.html#ai-results-summary",
+    "href": "labs/03lab.html#ai-results-summary",
+    "title": "Lab 2",
+    "section": "AI Results Summary",
+    "text": "AI Results Summary\n The AI generated system verilog was interesting. I would not have thought to use local param integer command for the counter. The most useful part of the experience of prompting AI was the immediate generation of a full module. However, it did not include enough detail for me to understand the details of its implementation.\n\n\n\nFigure 9. Error message from synthesis attempt in lattice\n\n\nChat GPT was promted to “Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.” Within seconds it generated the code shown in Figure 9. When uploaded to a new Radiant project it compiled immeadiately. This means that the output was of good quality since there were no bugs preventing it from synthisizing. It also was able to put the verilog together far more efficiently than the time it took me to write manually.\nSome new syntax that was familar but not used much in the past was that it declared variables as unsigned when in the past I had just declared variables. The formatting was really clean and the comments were clear something I will aim for in my next projects.\nChat GPT was then prompted to “Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.”\nThis also took a matter of seconds after uploading the files. It also synthesized on the first try in Radiant. This means the code was not significantly buggy and therefore High Quality.\nNext time an LLM is used in my workflow I might call upon refrence files of my own since that seemed to create a more reliablw result."
+  },
+  {
+    "objectID": "labs/04lab.html",
+    "href": "labs/04lab.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "In this lab an STMLK324KC microcontroller was programmed to interface with a speaker and play two songs: Fur Elise and Jingle Bells. For this lab the MCU’s memory map and timing peripherals had to be leveraged facilitating familiarity with the STMLK32KC data sheet navigation."
+  },
+  {
+    "objectID": "labs/04lab.html#introduction",
+    "href": "labs/04lab.html#introduction",
+    "title": "Lab 4",
+    "section": "",
+    "text": "In this lab an STMLK324KC microcontroller was programmed to interface with a speaker and play two songs: Fur Elise and Jingle Bells. For this lab the MCU’s memory map and timing peripherals had to be leveraged facilitating familiarity with the STMLK32KC data sheet navigation."
+  },
+  {
+    "objectID": "labs/04lab.html#design-and-testing-methodology",
+    "href": "labs/04lab.html#design-and-testing-methodology",
+    "title": "Lab 4",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThis labs design was encoded in C with libraries from the E 155 course as a jumping off point. Primarily the GPIO and RCC libraries were used. However the PWM and timer peripheral files had to be implemented. In order to do so a close reading of the reference manual and data sheet was neccescary to understand these functions and how to implement them. The timers selected for this lab were TIM15 and TIM16. TIM15 as a standard counter and TIM16 as the PWM. For the PWM the duty cycle was fixed to a value of 50% in order to ensure that the sound outputs would not be distorted. The timer and PWM were routed to the speaker through the LMA386 audio amplifier chip and a potnetiometer for volume control."
+  },
+  {
+    "objectID": "labs/04lab.html#technial-documentation",
+    "href": "labs/04lab.html#technial-documentation",
+    "title": "Lab 4",
+    "section": "Technial Documentation",
+    "text": "Technial Documentation\nGithub repository containing all code used for this lab: https://github.com/lanilei/E155labs/tree/main/lab4"
+  },
+  {
+    "objectID": "labs/04lab.html#calculations",
+    "href": "labs/04lab.html#calculations",
+    "title": "Lab 4",
+    "section": "Calculations",
+    "text": "Calculations\n\n\n\nFigure 1. Calculations for Max/Min duration, Max/ Min frequency and correct duration and pitch\n\n\n\nSchematic\nFollowing the LMA386 data sheet the following circuit was implemented\n\n\n\nFigure 2. Circuit Schematic of Digital Audio system and MCU"
+  },
+  {
+    "objectID": "labs/04lab.html#results-and-discussion",
+    "href": "labs/04lab.html#results-and-discussion",
+    "title": "Lab 4",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nThe speaker played fur elise and jingle bells when the code was uploaded onto the MCU. The volume was easily controlled using the potentiometer."
+  },
+  {
+    "objectID": "labs/04lab.html#testing",
+    "href": "labs/04lab.html#testing",
+    "title": "Lab 4",
+    "section": "Testing",
+    "text": "Testing\nThe circuit was tested using an oscilliscope to ensure poper signals were being output. All C files compiled without flagging any bugs."
+  },
+  {
+    "objectID": "labs/04lab.html#conclusion",
+    "href": "labs/04lab.html#conclusion",
+    "title": "Lab 4",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis lab took 20 hours. Through breadboarding, programming, and debugging a digital audio system was fully realized."
+  },
+  {
+    "objectID": "labs/04lab.html#ai-results-summary",
+    "href": "labs/04lab.html#ai-results-summary",
+    "title": "Lab 4",
+    "section": "AI Results Summary",
+    "text": "AI Results Summary\nAI was asked “What timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz? What’s the best choice of timer if I want to easily connect it to a GPIO pin? What formulae are relevant, and what registers need to be set to configure them properly?””\n\n\n\nFigure 3. AI Without Reference Manual\n\n\n\n\n\nFigure 4. AI With Reference Manual\n\n\nAs per usual Chat GPT was able to come up with an anser in a matter of seconds for what took me manually about an hour to figure out. It seems to be that it went with the first possible answer choosing TIM2 in both the cases where it was asked to browse the reference manual and the case where it was asked to answer without attatching the reference manual. Although it went with the first option that worked credit is due for skipping over TIM1. TIM2 is PWM capable and therefore not a bad choice. However I found that TIM 15/16 were better suited to my needs for this lab when repeating this process manually. I think it did point me in a write direction and was better and more efficient than “Ctrl F” in the refererence manual. That said,I’d like to further explore uploading the manual and asking it questions about the manual.\n When I asked to summarise all my timer options it returned thsi summary table. I like the idea that I can then choose for myself what best fits my project but also that I can obtain targetted information."
+  },
+  {
     "objectID": "posts/firstpost.html",
     "href": "posts/firstpost.html",
     "title": "first post",
@@ -151,7 +270,7 @@
     "href": "labs.html",
     "title": "E155 Labs",
     "section": "",
-    "text": "Lab 1\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nSep 4, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2\n\n\nMultiplexed 7-Segment Display\n\n\n\n\n\nSep 11, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3\n\n\nKeypad Scanner\n\n\n\n\n\nSep 18, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4\n\n\nDigital Audio\n\n\n\n\n\nSep 25, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5\n\n\nInterrupts\n\n\n\n\n\nOct 2, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 6\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nOct 9, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 7\n\n\nThe Advanced Encription Standard\n\n\n\n\n\nOct 16, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\nNo matching items"
+    "text": "Lab 1\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nSep 4, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2\n\n\nMultiplexed 7-Segment Display\n\n\n\n\n\nSep 11, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2\n\n\nKeypad Scanner\n\n\n\n\n\nSep 18, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4\n\n\nDigital Audio\n\n\n\n\n\nSep 25, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5\n\n\nInterrupts\n\n\n\n\n\nOct 2, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 6\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nOct 9, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\n\n\n\n\n\n\n\nLab 7\n\n\nThe Advanced Encription Standard\n\n\n\n\n\nOct 16, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources.html",
@@ -159,5 +278,117 @@
     "title": "E155 Resources",
     "section": "",
     "text": "resources\n\n\nhttps://hmc-e155.github.io\n\n\n\n\n\nAug 28, 2025\n\n\nLeilani Elkaslasy\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/05lab.html",
+    "href": "labs/05lab.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "In this lab an STMLK324KC microcontroller was programmed to interface with a motor to measure the rotational speed an direction of its spin through a quadrature encoder. The moter output two square waves that were 90 degrees out of phase and interrupts were used to extract the rotations per second and the direction of rotation with both accuracy and preciscion."
+  },
+  {
+    "objectID": "labs/05lab.html#introduction",
+    "href": "labs/05lab.html#introduction",
+    "title": "Lab 5",
+    "section": "",
+    "text": "In this lab an STMLK324KC microcontroller was programmed to interface with a motor to measure the rotational speed an direction of its spin through a quadrature encoder. The moter output two square waves that were 90 degrees out of phase and interrupts were used to extract the rotations per second and the direction of rotation with both accuracy and preciscion."
+  },
+  {
+    "objectID": "labs/05lab.html#design-and-testing-methodology",
+    "href": "labs/05lab.html#design-and-testing-methodology",
+    "title": "Lab 5",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe system was esigned to interpret two optical quarature sensors that produced square wave sthat were out of phase by 90 degrees. All edges of the signals generate an interrupt. This labs design was encoded in C with libraries from the E 155 course as a jumping off point."
+  },
+  {
+    "objectID": "labs/05lab.html#technial-documentation",
+    "href": "labs/05lab.html#technial-documentation",
+    "title": "Lab 5",
+    "section": "Technial Documentation",
+    "text": "Technial Documentation\nGithub repository containing all code used for this lab: https://github.com/lanilei/E155labs/tree/main/lab5\n\nSystem Flow Chart\nThis chart shows an overview of the interrupt and encoder interpratation system implemented. The sequence on the left shows the main loop wich interafaces with the interrupt handler on the right."
+  },
+  {
+    "objectID": "labs/05lab.html#calculations",
+    "href": "labs/05lab.html#calculations",
+    "title": "Lab 5",
+    "section": "Calculations",
+    "text": "Calculations\nThe interrupt works by incrementing the conter at each rising and falling edge for both uadrature signals. The count over the course of a second is converted to angular velocity as revolutions per second. The interrupt increments by four for each measured pulse which is why we apply the correction factors. The datasheet for the motor state sthat there are 408 pulses per revolution which we can extrapolate to find the target velocity. BY confirming the results with the datasheet, the system is deemd to operate accuratley. \n\nSchematic\nFollowing the LTS-25Ga370H-34 data sheet the following circuit was implememted to interface signal A and B with pins 6 and 8 on the MCU which are 5V tolerant. The power for the Quadrature and Gnd were provided by the MCU and the motor was powered by a power supply.\n\n\n\nFigure 3. Circuit Schematic of Digital Audio system and MCU"
+  },
+  {
+    "objectID": "labs/05lab.html#results-and-discussion",
+    "href": "labs/05lab.html#results-and-discussion",
+    "title": "Lab 5",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nThe interrupt based encoder implemented in this lab provided accurate velocity measurements in rotations/s and dependable direction readings in clockwise denoted as CW and counter-clockwise denoted as CCW. The interrupts were cirical to this lab as they allowed the MCU to complete other tasks while aiting for an encoder signal, this improved system efficiency and responsiveness for high speed resolution. By incrementing the counter on both the positive and negative edges of encoder singals high speed was bolstered.\nPolling has many limitations that made interrupts an ideal choice for this lab. The primary limitation is the polling requries that the encoder flags are constantly monitered- this creates a high consuption of CPU resources- primarily time and power. Polling can also often be too slow which could incorrectly skew data. For the time sensitive control required by this lab- polling was unsuitable."
+  },
+  {
+    "objectID": "labs/05lab.html#testing",
+    "href": "labs/05lab.html#testing",
+    "title": "Lab 5",
+    "section": "Testing",
+    "text": "Testing\nThe circuit was tested using an oscilliscope to ensure poper signals were being output. All C files compiled without flagging any bugs.\n\n\n\nFigure 4. Scope Trace, yellow trace represents polling, blue trace represents interrupt trigger and purple represents the encoder"
+  },
+  {
+    "objectID": "labs/05lab.html#conclusion",
+    "href": "labs/05lab.html#conclusion",
+    "title": "Lab 5",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis lab met all required specs. Implementing this lab took 30 hours. Through breadboarding, programming, and debugging the motor with real time angular velocity and spin direction output was realized."
+  },
+  {
+    "objectID": "labs/05lab.html#ai-prototype-summary",
+    "href": "labs/05lab.html#ai-prototype-summary",
+    "title": "Lab 5",
+    "section": "AI Prototype Summary",
+    "text": "AI Prototype Summary\nAI was prompted, “Write me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?” It was suprising that chat GPT suggested the use of Hardware Timer in Encoder mode first over the use of an interrupt as the prompt asked for a interrupt. When guided towards an interrupt. The Code generated when asked for an interrupt did not compile and erros were flagged on nearly every line of code. q"
+  },
+  {
+    "objectID": "labs/06lab.html#introduction",
+    "href": "labs/06lab.html#introduction",
+    "title": "Lab 6",
+    "section": "Introduction",
+    "text": "Introduction\nIn this lab an STMLK324KC microcontroller was programmed to interface with a DS1722 SPI temperature seensor and a UART ESP8266 module. The DS1722 was successfully able to read temperature annd relay that information to the microcontroller which then used the ESP8266 to host a HTML web server to view the real time temperature readings. THe HTML webserver allowed the user to choose a resolution of temperature reading and turn off and on an LED. This lab successfully showed an IoT device that worked for data aquisition and remote monitoring."
+  },
+  {
+    "objectID": "labs/06lab.html#design-and-testing-methodology",
+    "href": "labs/06lab.html#design-and-testing-methodology",
+    "title": "Lab 6",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe system was designed to communicate between 3 components. In order to accomplish this SPI had to be studie within the MCU reference manual to configure the proper settings. This included data size, duplex mode and baud rate. Then the correct pins had to be selected for MISO MOSI and SCLK, while manually controlling chip select. The sequence required pulled chip select high before sending a command byte to then send or recieve data. After writing the code and setting up the web interface by adding the temperature resolution functions and buttons the sytem was ready to be tested and after some challenges it worked! Primarily the pin assignments caused some malfunctions that were quickly sorted out once identified."
+  },
+  {
+    "objectID": "labs/06lab.html#technial-documentation",
+    "href": "labs/06lab.html#technial-documentation",
+    "title": "Lab 6",
+    "section": "Technial Documentation",
+    "text": "Technial Documentation\nGithub repository containing all code used for this lab: https://github.com/lanilei/E155labs/tree/main/lab6\n\nSchematic\nFollowing the DS1722 data sheet the following circuit was implememted to interface the MCU with the temperature sensor and the UART module."
+  },
+  {
+    "objectID": "labs/06lab.html#results-and-discussion",
+    "href": "labs/06lab.html#results-and-discussion",
+    "title": "Lab 6",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nThe unsuitable. ### HTML Page"
+  },
+  {
+    "objectID": "labs/06lab.html#testing",
+    "href": "labs/06lab.html#testing",
+    "title": "Lab 6",
+    "section": "Testing",
+    "text": "Testing\nThe circuit was tested in hardware to ensure it performed as expected and using a logic analyzer to vie wthe SPI communication\n\nSPI trace\nThis Traces shows the SPI communication between the MCU and temp sensor. The set resolution from the html site is relfecte by the MOSI hex O8 which is the resolution set while testing."
+  },
+  {
+    "objectID": "labs/06lab.html#conclusion",
+    "href": "labs/06lab.html#conclusion",
+    "title": "Lab 6",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis lab met all required specs. Implementing this lab took 25 hours. Through breadboarding, programming, and debugging the temperature sensor and interface was fully realized."
+  },
+  {
+    "objectID": "labs/06lab.html#ai-prototype-summary",
+    "href": "labs/06lab.html#ai-prototype-summary",
+    "title": "Lab 6",
+    "section": "AI Prototype Summary",
+    "text": "AI Prototype Summary\nThe prompted AI did work when plugged into my project, THat said however it felt as though it was “too easy,” I didn’t learn anything and would not know where to start with debugging. The HTML code was also a lot longer than what I implemented so perhaps can be argued as less elegant. It remains frustrating how quickly AI can generate a solution that took me hours."
   }
 ]
