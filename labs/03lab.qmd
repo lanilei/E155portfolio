@@ -44,7 +44,7 @@ In order to approach solving this problem, each function was seperated into its 
 ![Figure 1b. Block Diagram of the System Verilog Design for the switch submodule](lab2images/switchdiagram.jpg)
 
 ## Calculations 
-![Figure 2. Calculations for Resistor Values for PNP Transistor circuit, Seven segment display circuit, and for the Red external LEDS](l`ab2images/calculations.jpeg)
+![Figure 2. Calculations for Resistor Values for PNP Transistor circuit, Seven segment display circuit, and for the Red external LEDS](lab2images/calculations.jpeg)
 
 ### Schematic
 Using the resistor value confirmed by the above calculations a circuit was created on a breadboard in accordance with the following schematic: 
